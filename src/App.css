@@ -1,0 +1,25 @@
+.simple ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+}
+.simple ol li {
+  counter-increment: my-awesome-counter;
+}
+.simple ol li::before {
+  content: counter(my-awesome-counter) " ";
+  color: red;
+}
+
+
+
+.nested ol {
+  counter-reset: item;
+  list-style-type: none;
+}
+.nested ol>li { 
+  counter-increment: item;
+}
+.nested ol>li::before { 
+  content: counters(item, '.') ' '; 
+  color: red;
+}
